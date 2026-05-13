@@ -1,0 +1,211 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// BCH Form Controls — Shared Styles
+// Source: docs/DESIGN.md + docs/COMPONENTS.md
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Field Wrapper ─────────────────────────────────────────────────────────────
+.bch-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bch-field__label {
+  display: block;
+  color: var(--bch-gray-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-bottom: 4px;
+}
+
+.bch-field__error {
+  color: var(--bch-error-base);
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+// ── Text Input ────────────────────────────────────────────────────────────────
+.bch-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--bch-gray-lighter);
+  border-radius: var(--bch-radius-sm);
+  background: var(--bch-white);
+  color: var(--bch-gray-dark);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+
+  &::placeholder {
+    color: var(--bch-gray-light);
+  }
+
+  &:hover {
+    border-color: var(--bch-gray-base);
+  }
+
+  &:focus {
+    border-color: var(--bch-primary-base);
+    box-shadow: 0 0 0 3px var(--bch-primary-transparent);
+  }
+
+  &:disabled {
+    background: var(--bch-gray-background);
+    border-color: var(--bch-gray-lighter);
+    color: var(--bch-gray-light);
+    cursor: not-allowed;
+  }
+
+  &--error {
+    border-color: var(--bch-error-base);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(212, 57, 0, 0.16);
+    }
+  }
+}
+
+// ── Select Input ──────────────────────────────────────────────────────────────
+.bch-select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 36px 8px 12px;
+  border: 1px solid var(--bch-gray-lighter);
+  border-radius: var(--bch-radius-sm);
+  background: var(--bch-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238393A3' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 10px center;
+  background-size: 16px;
+  color: var(--bch-gray-dark);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+
+  &:hover {
+    border-color: var(--bch-gray-base);
+  }
+
+  &:focus {
+    border-color: var(--bch-primary-base);
+    box-shadow: 0 0 0 3px var(--bch-primary-transparent);
+  }
+
+  &:disabled {
+    background-color: var(--bch-gray-background);
+    border-color: var(--bch-gray-lighter);
+    color: var(--bch-gray-light);
+    cursor: not-allowed;
+  }
+
+  &--error {
+    border-color: var(--bch-error-base);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(212, 57, 0, 0.16);
+    }
+  }
+}
+
+// ── Radio Group ───────────────────────────────────────────────────────────────
+.bch-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bch-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.bch-radio {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--bch-primary-base);
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:focus-visible {
+    outline: 2px solid var(--bch-primary-base);
+    outline-offset: 2px;
+  }
+}
+
+.bch-radio-option__label {
+  color: var(--bch-gray-dark);
+  font-size: 14px;
+  line-height: 24px;
+  user-select: none;
+}
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+.bch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--bch-radius-sm);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid var(--bch-primary-base);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  // Primary
+  &--primary {
+    background: var(--bch-primary-base);
+    color: var(--bch-white);
+
+    &:hover:not(:disabled) {
+      background: var(--bch-primary-dark);
+    }
+
+    &:active:not(:disabled) {
+      background: var(--bch-primary-dark);
+      box-shadow: var(--bch-shadow-controls);
+    }
+  }
+
+  // Secondary
+  &--secondary {
+    background: var(--bch-white);
+    color: var(--bch-primary-base);
+    border: 1px solid var(--bch-primary-base);
+
+    &:hover:not(:disabled) {
+      background: var(--bch-primary-background);
+    }
+
+    &:active:not(:disabled) {
+      background: var(--bch-primary-background);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// BCH Design Tokens — CSS Custom Properties
+// Source: docs/DESIGN.md
+// ─────────────────────────────────────────────────────────────────────────────
+
+:root {
+  // ── Colors: Gray ────────────────────────────────────────────────────────────
+  --bch-gray-dark:        #2A333D;
+  --bch-gray-base:        #52677B;
+  --bch-gray-light:       #8393A3;
+  --bch-gray-lighter:     #CED7E0;
+  --bch-gray-background:  #F0F2F5;
+  --bch-gray-transparent: rgba(82, 103, 123, 0.16);
+
+  // ── Colors: White ───────────────────────────────────────────────────────────
+  --bch-white:            #FFFFFF;
+  --bch-white-transparent: rgba(255, 255, 255, 0.16);
+
+  // ── Colors: Brand ───────────────────────────────────────────────────────────
+  --bch-brand-dark:       #001B4C;
+  --bch-brand-base:       #002464;
+  --bch-brand-light:      #002884;
+  --bch-brand-lighter:    #A3C1F5;
+  --bch-brand-background: #F5F9FF;
+
+  // ── Colors: Primary ─────────────────────────────────────────────────────────
+  --bch-primary-dark:       #0038E1;
+  --bch-primary-base:       #295EFF;
+  --bch-primary-light:      #5583FF;
+  --bch-primary-lighter:    #A3B7F5;
+  --bch-primary-background: #FAFBFF;
+  --bch-primary-transparent: rgba(41, 94, 255, 0.16);
+
+  // ── Colors: Auxiliar / Error ────────────────────────────────────────────────
+  --bch-error-dark:       #A12B00;
+  --bch-error-base:       #D43900;
+  --bch-error-light:      #FF3900;
+  --bch-error-lighter:    #F5B9A3;
+  --bch-error-background: #FFF8F5;
+
+  // ── Colors: Auxiliar / Success ──────────────────────────────────────────────
+  --bch-success-dark:       #176517;
+  --bch-success-base:       #1E851E;
+  --bch-success-light:      #18AC18;
+  --bch-success-lighter:    #9BD49B;
+  --bch-success-background: #F5FFF5;
+
+  // ── Colors: Auxiliar / Warning ──────────────────────────────────────────────
+  --bch-warning-dark:       #7F5E32;
+  --bch-warning-base:       #FDBC64;
+  --bch-warning-background: #FFFCF5;
+
+  // ── Colors: Auxiliar / Info ─────────────────────────────────────────────────
+  --bch-info-dark:       #085B9E;
+  --bch-info-base:       #0B78D0;
+  --bch-info-background: #F5FAFF;
+
+  // ── Colors: Overlay ─────────────────────────────────────────────────────────
+  --bch-overlay-dark: rgba(42, 51, 61, 0.60);
+
+  // ── Shadows ─────────────────────────────────────────────────────────────────
+  --bch-shadow-min:      0 0 1px 0 rgba(0, 36, 100, 0.10);
+  --bch-shadow-controls: 0 2px 4px rgba(42, 52, 61, 0.24), 0 0 2px rgba(42, 52, 61, 0.12);
+  --bch-shadow-tiny:     0 0 1px rgba(131, 147, 163, 1);
+  --bch-shadow-neutral:  0 4px 12px rgba(42, 52, 61, 0.10);
+  --bch-shadow-big:      0 4px 42px 20px rgba(7, 20, 32, 0.10);
+
+  // ── Spacing ─────────────────────────────────────────────────────────────────
+  --bch-spacing-0: 0px;
+  --bch-spacing-1: 4px;
+  --bch-spacing-2: 8px;
+  --bch-spacing-3: 12px;
+  --bch-spacing-4: 16px;
+  --bch-spacing-5: 24px;
+  --bch-spacing-6: 32px;
+  --bch-spacing-7: 40px;
+
+  // ── Border Radius ───────────────────────────────────────────────────────────
+  --bch-radius-sm:  4px;
+  --bch-radius-md:  8px;
+  --bch-radius-lg:  12px;
+  --bch-radius-full: 9999px;
+}

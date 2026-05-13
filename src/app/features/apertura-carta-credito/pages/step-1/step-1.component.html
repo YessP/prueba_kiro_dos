@@ -1,0 +1,158 @@
+<div class="bch-page-container">
+
+  <!-- ── Breadcrumbs ─────────────────────────────────────────────── -->
+  <nav class="bch-breadcrumbs" aria-label="Ruta de navegación">
+    <ol class="bch-breadcrumbs__list">
+      <li class="bch-breadcrumbs__item">
+        <a href="/" class="bch-breadcrumbs__link bch-body-small">Inicio</a>
+      </li>
+      <li class="bch-breadcrumbs__separator" aria-hidden="true">
+        <span class="material-icons">chevron_right</span>
+      </li>
+      <li class="bch-breadcrumbs__item">
+        <a href="/comercio-exterior" class="bch-breadcrumbs__link bch-body-small">
+          Comercio Exterior
+        </a>
+      </li>
+      <li class="bch-breadcrumbs__separator" aria-hidden="true">
+        <span class="material-icons">chevron_right</span>
+      </li>
+      <li class="bch-breadcrumbs__item bch-breadcrumbs__item--active" aria-current="page">
+        <span class="bch-body-small">Apertura Carta de Crédito</span>
+      </li>
+    </ol>
+  </nav>
+
+  <!-- ── Workflow Header ─────────────────────────────────────────── -->
+  <header class="bch-workflow-header">
+    <h1 class="bch-h1">Apertura Carta de Crédito</h1>
+  </header>
+
+  <!-- ── Progress Stepper ───────────────────────────────────────── -->
+  <div class="bch-stepper" role="navigation" aria-label="Progreso del flujo">
+    <div class="bch-stepper__track">
+      <!-- Step 1 — Active -->
+      <div class="bch-stepper__step bch-stepper__step--active" aria-current="step">
+        <div class="bch-stepper__indicator">
+          <span class="bch-stepper__number bch-body-small-bold">1</span>
+        </div>
+        <span class="bch-stepper__label bch-body-small">Información Inicial</span>
+      </div>
+
+      <div class="bch-stepper__connector" aria-hidden="true"></div>
+
+      <!-- Step 2 — Pending -->
+      <div class="bch-stepper__step bch-stepper__step--pending">
+        <div class="bch-stepper__indicator">
+          <span class="bch-stepper__number bch-body-small">2</span>
+        </div>
+        <span class="bch-stepper__label bch-body-small">Condiciones</span>
+      </div>
+
+      <div class="bch-stepper__connector" aria-hidden="true"></div>
+
+      <!-- Step 3 — Pending -->
+      <div class="bch-stepper__step bch-stepper__step--pending">
+        <div class="bch-stepper__indicator">
+          <span class="bch-stepper__number bch-body-small">3</span>
+        </div>
+        <span class="bch-stepper__label bch-body-small">Documentos</span>
+      </div>
+
+      <div class="bch-stepper__connector" aria-hidden="true"></div>
+
+      <!-- Step 4 — Pending -->
+      <div class="bch-stepper__step bch-stepper__step--pending">
+        <div class="bch-stepper__indicator">
+          <span class="bch-stepper__number bch-body-small">4</span>
+        </div>
+        <span class="bch-stepper__label bch-body-small">Confirmación</span>
+      </div>
+    </div>
+
+    <div class="bch-stepper__context">
+      <span class="bch-body-small bch-stepper__counter">Paso 1 de 4</span>
+      <h2 class="bch-h3 bch-stepper__step-title">Información Inicial</h2>
+    </div>
+  </div>
+
+  <!-- ── Main Content ────────────────────────────────────────────── -->
+  <main class="bch-workflow-content" id="main-content">
+    <div class="bch-accordion-stack">
+
+      <!-- 1. Información General -->
+      <bch-informacion-general
+        [form]="getGroup('informacionGeneral')"
+        [oficinasEjecutivas]="oficinasEjecutivas()"
+        [oficinas]="oficinas()"
+      />
+
+      <!-- 2. Información Cliente -->
+      <bch-informacion-cliente
+        [form]="getGroup('informacionCliente')"
+      />
+
+      <!-- 3. Beneficiario -->
+      <bch-beneficiario
+        [form]="getGroup('beneficiario')"
+        [paises]="paises()"
+      />
+
+      <!-- 4. Banco Financiador -->
+      <bch-banco-entidad
+        title="Banco Financiador"
+        fieldPrefix="bancoFinanciador"
+        [form]="getGroup('bancoFinanciador')"
+      />
+
+      <!-- 5. Banco Corresponsal Vista -->
+      <bch-banco-entidad
+        title="Banco Corresponsal Vista"
+        fieldPrefix="bancoCorresponsalVista"
+        [form]="getGroup('bancoCorresponsalVista')"
+      />
+
+      <!-- 6. Banco Corresponsal Plazo (collapsed by default) -->
+      <bch-banco-entidad
+        title="Banco Corresponsal Plazo"
+        fieldPrefix="bancoCorresponsalPlazo"
+        [form]="getGroup('bancoCorresponsalPlazo')"
+        [initiallyExpanded]="false"
+      />
+
+      <!-- 7. Banco Notificador -->
+      <bch-banco-entidad
+        title="Banco Notificador"
+        fieldPrefix="bancoNotificador"
+        [form]="getGroup('bancoNotificador')"
+      />
+
+      <!-- 8. Identificación de la Operación -->
+      <bch-identificacion-operacion
+        [form]="getGroup('identificacionOperacion')"
+      />
+
+    </div>
+  </main>
+
+  <!-- ── Footer Actions ─────────────────────────────────────────── -->
+  <footer class="bch-workflow-footer" role="contentinfo">
+    <div class="bch-workflow-footer__actions">
+      <button
+        type="button"
+        class="bch-btn bch-btn--secondary"
+        (click)="onGuardarBorrador()"
+      >
+        Guardar Borrador
+      </button>
+      <button
+        type="button"
+        class="bch-btn bch-btn--primary"
+        (click)="onSiguiente()"
+      >
+        Siguiente
+      </button>
+    </div>
+  </footer>
+
+</div>
